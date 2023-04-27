@@ -1,24 +1,36 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import Navbar from './pages/Navbar.js';
+import Home from './pages/Home.js';
+import Company from './pages/Company';
+import CompanyLogin from './pages/CompanyLogin';
+import Student from './pages/Student';
+import StudentLogin from './pages/StudentLogin';
+
+import CompanyState from './context/company/CompanyState';
+import StudentState from './context/student/StudentState';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <StudentState>
+        <CompanyState>
+          <div>
+            <Navbar />
+            <Routes>
+              <Route exact path='/' element={<Home />} />
+              <Route exact path='/company' element={<Company />} />
+              <Route exact path='/student' element={<Student />} />
+              <Route exact path='/company/login' element={<CompanyLogin />} />
+              <Route exact path='/student/login' element={<StudentLogin />} />
+            </Routes>
+          </div>
+        </CompanyState>
+      </StudentState>
+    </>
   );
 }
 
