@@ -22,8 +22,15 @@ const SignupForm = ({ handleSubmitClick }) => {
     }
 
     return (
+        <>
+        <div className=''>
+            
+        </div>
         <div className="sig-container">
             <div className="content">
+                <div className="signup-title">
+                    <h2>Sign Up</h2>
+                </div>
                 <form action="">
                     <div className="two-input">
                         <div className="input-item email">
@@ -73,6 +80,7 @@ const SignupForm = ({ handleSubmitClick }) => {
                 </form>
             </div>
         </div>
+        </>
     )
 }
 

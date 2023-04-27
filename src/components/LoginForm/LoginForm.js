@@ -22,7 +22,7 @@ const LoginForm = ({ title, handleSubmitClick, signupClick}) => {
         <div className="login-container">
             <div><h2>{title}</h2></div>
             <div className="login-box">
-                <div className="navigate">
+                <div className="navigate-box">
                     <div className="btns signup" onClick={signupClick}>
                         <h3>Sign Up</h3>
                     </div>
@@ -33,7 +33,53 @@ const LoginForm = ({ title, handleSubmitClick, signupClick}) => {
                 <div className="form-content">
                     <div className='form-message'><h3>Welcome Back!</h3></div>
                     <div>
-                        <Form>
+                        <form action="">
+                            <div className="form-item login-email">
+                                <span><CgProfile size={30} /></span>
+                                <input 
+                                    type="email" 
+                                    name="email" 
+                                    id="email" 
+                                    value={email} 
+                                    onChange={(e) => { setEmail(e.target.value)}} 
+                                    placeholder="Your work email" 
+                                    required
+                                    style={{ width: '20rem', height: '3rem'}}
+                                />
+                            </div>
+                            <div className="form-item login-password">
+                                <span><AiOutlineLock size={30} /></span>
+                                <input 
+                                    type="password" 
+                                    name="password" 
+                                    id="password" 
+                                    value={password} 
+                                    onChange={(e) => { setPassword(e.target.value)}} 
+                                    placeholder="password" 
+                                    required
+                                    style={{ width: '20rem', height: '3rem'}}
+                                />
+                            </div>
+                            <div className='form-item'>
+                                <button className='login-button' type="submit" onClick={handleLoginClick}>
+                                    Login
+                                </button>
+                            </div>
+                        </form>
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default LoginForm
+
+/**
+ * 
+ * <Form>
                             <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
                                 <Form.Label column sm={2}>
                                     <CgProfile size={30} />
@@ -51,11 +97,11 @@ const LoginForm = ({ title, handleSubmitClick, signupClick}) => {
                                     <Form.Control value={password} onChange={(e) => { setPassword(e.target.value)}} type="password" placeholder="Password" required />
                                 </Col>
                             </Form.Group>
-                            {/* <Form.Group as={Row} className="mb-3" controlId="formHorizontalCheck">
+                            /* <Form.Group as={Row} className="mb-3" controlId="formHorizontalCheck">
                                 <Col sm={{ span: 10, offset: 2 }}>
                                     <Form.Check label="Remember me" />
                                 </Col>
-                            </Form.Group> */}
+                            </Form.Group> 
 
                             <Form.Group as={Row} className="mb-3">
                                 <Col sm={{ span: 10, offset: 2 }}>
@@ -63,11 +109,4 @@ const LoginForm = ({ title, handleSubmitClick, signupClick}) => {
                                 </Col>
                             </Form.Group>
                         </Form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
-}
-
-export default LoginForm
+ */

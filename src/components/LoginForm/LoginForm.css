@@ -15,7 +15,7 @@ h2 {
     margin-top: 1rem;
 }
 
-.navigate {
+.navigate-box {
     display: flex;
 }
 
@@ -40,40 +40,74 @@ h2 {
     border-radius: 12px;
 }
 
+.form-content h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    margin-top: 2rem;
+}
+
 .form-content {
     width: 30rem;
+    background-color: green;
+
+    padding-left: 5rem;
+    color: white;
+    background: #1F0F40;
+    mix-blend-mode: multiply; 
+    opacity: 0.8;
+    border: 1px solid #FFFFFF;
+    border-radius: 12px;
+}
+
+.form-item {
+    margin: 2rem auto;
+}
+
+span {
+    margin-right: 5px;
+}
+
+
+
+/* .form-content {
+    width: 30rem;
+    height: 30rem;
     padding-left: 0;
     padding-right: 0;
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+
 
     color: white;
     background: #1F0F40;
-    /* mix-blend-mode: multiply; */
+    /* mix-blend-mode: multiply; 
     opacity: 0.6;
     border: 1px solid #FFFFFF;
     border-radius: 12px;
 }
 
-.form-content h3 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 700;
-    font-size: 40px;
+.form-item {
+    margin-top: 1rem;
 }
 
-.form-message {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+span {
+    margin-right: 1rem;
 }
+
+input {
+    size: 2rem;
+} */
 
 .login-button {
     box-sizing: border-box;
 
     width: 120px;
     height: 35px;
+    margin-left: 5.5rem;
 
     color: white;
     background: rgba(31, 15, 64, 1);

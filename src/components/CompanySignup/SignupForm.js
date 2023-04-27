@@ -2,15 +2,6 @@ import React, { useState } from 'react'
 import './SignupForm.css'
 
 const SignupForm = ({ handleSubmitClick }) => {
-    // "email" : "amazon@amz.com",
-    // "password": "234ddf324",
-    // "name" : "Amazon INC",
-    // "jobProfile" : "Software Engineer",
-    // "jobDescription" : "We are the second best!",
-    // "compensation" : "Rs 39,00,000",
-    // "location" : "Bengaluru",
-    // "minCGPA" : 7.8
-
     const [credentials, setCredentials] = useState({
         email: "",
         jobProfile: "",
@@ -21,7 +12,6 @@ const SignupForm = ({ handleSubmitClick }) => {
         location: "",
         minCGPA: ""
     })
-
 
     const onChange = (e) => {
         setCredentials({ ...credentials, [e.target.name]: e.target.value })
@@ -34,6 +24,9 @@ const SignupForm = ({ handleSubmitClick }) => {
     return (
         <div className="sig-container">
             <div className="content">
+                <div className="signup-title">
+                    <h2>Sign Up</h2>
+                </div>
                 <form action="">
                     <div className="two-input">
                         <div className="input-item email">

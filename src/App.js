@@ -12,6 +12,8 @@ import CompanySignup from './pages/CompanySignup';
 import Student from './pages/Student';
 import StudentLogin from './pages/StudentLogin';
 import StudentSignup from './pages/StudentSignup';
+import StudentOpening from './pages/StudentOpening';
+import StudentApplied from './pages/StudentApplied';
 
 import CompanyState from './context/company/CompanyState';
 import StudentState from './context/student/StudentState';
@@ -31,6 +33,8 @@ function App() {
               <Route exact path='/student' element={<Student />} />
               <Route exact path='/student/login' element={<StudentLogin />} />
               <Route exact path='/student/signup' element={<StudentSignup />} />
+              <Route exact path='/student/openings' element={<StudentOpening />} />
+              <Route exact path='/student/applied' element={<StudentApplied />} />
             </Routes>
         </CompanyState>
       </StudentState>
