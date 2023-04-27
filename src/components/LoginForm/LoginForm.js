@@ -15,8 +15,6 @@ const LoginForm = ({ title, handleSubmitClick, signupClick}) => {
 
     const handleLoginClick = async (e) => {
         e.preventDefault()
-
-        console.log('This is a login click')
         await handleSubmitClick(e, email, password)
     }
 
