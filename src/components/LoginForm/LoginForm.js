@@ -9,7 +9,7 @@ import Row from 'react-bootstrap/Row';
 import { CgProfile } from 'react-icons/cg'
 import { AiOutlineLock } from 'react-icons/ai'
 
-const LoginForm = (props) => {
+const LoginForm = ({ title, handleSubmitClick, signupClick}) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
@@ -17,15 +17,15 @@ const LoginForm = (props) => {
         e.preventDefault()
 
         console.log('This is a login click')
-        await props.handleSubmitClick(e, email, password)
+        await handleSubmitClick(e, email, password)
     }
 
     return (
         <div className="login-container">
-            <div><h2>{props.title}</h2></div>
+            <div><h2>{title}</h2></div>
             <div className="login-box">
                 <div className="navigate">
-                    <div className="btns signup">
+                    <div className="btns signup" onClick={signupClick}>
                         <h3>Sign Up</h3>
                     </div>
                     <div className="btns login">

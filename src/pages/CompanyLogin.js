@@ -11,6 +11,12 @@ const CompanyLogin = () => {
     const context = useContext(companyContext)
     const {setCompanyLogin, setCompany} = context;
 
+    const signupClick = () => {
+        setCompanyLogin(false)
+        setCompany({})
+        navigate('/company/signup')
+    }
+
     const handleSubmitClick = async (e, email, password) => {
         e.preventDefault()
 
@@ -42,7 +48,11 @@ const CompanyLogin = () => {
 
     return (
         <>
-            <LoginForm title={"For Companies"}  handleSubmitClick={handleSubmitClick}  />
+            <LoginForm 
+                title={"For Companies"}  
+                handleSubmitClick={handleSubmitClick}  
+                signupClick={signupClick}
+            />
         </>
     )
 }

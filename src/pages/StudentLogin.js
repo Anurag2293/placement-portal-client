@@ -11,6 +11,12 @@ const StudentLogin = () => {
     const context = useContext(StudentContext)
     const {setStudentLogin, setStudent} = context;
 
+    const signupClick = () => {
+        setStudentLogin(false)
+        setStudent({})
+        navigate('/student/signup')
+    }
+
     const handleSubmitClick = async (e, email, password) => {
         e.preventDefault()
 
@@ -42,7 +48,11 @@ const StudentLogin = () => {
 
     return (
         <>
-            <LoginForm title={"For Students"} handleSubmitClick={handleSubmitClick} />
+            <LoginForm 
+                title={"For Students"} 
+                handleSubmitClick={handleSubmitClick} 
+                signupClick={signupClick}
+            />
         </>
     )
 }

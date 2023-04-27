@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import companyContext from '../context/company/companyContext'
+import ProfileBar from '../components/ProfileBar'
 
 const Company = () => {
     const navigate = useNavigate()
@@ -17,8 +18,7 @@ const Company = () => {
 
     return (
         <>
-            <div>Company Info</div>
-            <div>{company.name}</div>
+            <ProfileBar name={company.name} email={company.email}/>
         </>
     )
 }
