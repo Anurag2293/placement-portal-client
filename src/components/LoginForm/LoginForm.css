@@ -19,6 +19,10 @@ h2 {
     display: flex;
 }
 
+.navigate-box > .btns:hover {
+    cursor: pointer;
+}
+
 .btns {
     height: 55px;
     width: 15rem;

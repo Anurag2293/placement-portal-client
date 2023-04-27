@@ -1,10 +1,6 @@
 import React, { useState } from 'react'
 
 import './LoginForm.css'
-import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
 
 import { CgProfile } from 'react-icons/cg'
 import { AiOutlineLock } from 'react-icons/ai'
