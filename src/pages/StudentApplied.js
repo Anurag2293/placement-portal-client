@@ -20,37 +20,41 @@ const StudentApplied = () => {
         // eslint-disable-next-line
 
         const findAppliedCompanies = async () => {
-            const response1 = await fetch(`${SERVER}/company/listall`, {
-                method: 'GET'
-            })
-            const result1 = await response1.json()
-            const allCompanies = result1.companies
+            try {
+                // Find all the companies who signed up
+                const response1 = await fetch(`${SERVER}/company/listall`, {
+                    method: 'GET'
+                })
+                const result1 = await response1.json()
+                const allCompanies = result1.companies
 
-            console.log(allCompanies)
+                // Find all the emails of the companies for whom the student has applied
+                const response2 = await fetch(`${SERVER}/student/listcompanies`, {
+                    method: 'POST',
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ email: student.email })
+                })
+                const result2 = await response2.json()
+                const allAppliedCompanies = result2.companiesApplied
 
-            const response2 = await fetch(`${SERVER}/student/listcompanies`, {
-                method: 'POST',
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ email: student.email })
-            })
-            const result2 = await response2.json()
-            const allAppliedCompanies = result2.companiesApplied
-
-            console.log(allAppliedCompanies)
-
-            let appliedArray = []
-            for (let company of allCompanies) {
-                for (let appliedObj of allAppliedCompanies) {
-                    if (company.email === appliedObj.companyEmail) {
-                        const entry = {...company, status: appliedObj.status};
-                        appliedArray.push(entry)
+                // Find all the companies & their details for which student has applied
+                let appliedArray = []
+                for (let company of allCompanies) {
+                    for (let appliedObj of allAppliedCompanies) {
+                        if (company.email === appliedObj.companyEmail) {
+                            const entry = { ...company, status: appliedObj.status };
+                            appliedArray.push(entry)
+                        }
                     }
                 }
-            }
 
-            setCompaniesApplied(appliedArray)
+                console.log(appliedArray)
+                setCompaniesApplied(appliedArray)
+            } catch (error) {
+                alert(error)
+            }
         }
 
         findAppliedCompanies()
