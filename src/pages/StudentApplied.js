@@ -5,7 +5,7 @@ import StudentContext from '../context/student/studentContext'
 import ProfileBar from '../components/ProfileBar'
 import StudentTable2 from '../components/StudentTable2'
 
-const SERVER = 'http://localhost:5000/api'
+import { SERVER } from '../constants/constants'
 
 const StudentApplied = () => {
     const navigate = useNavigate()

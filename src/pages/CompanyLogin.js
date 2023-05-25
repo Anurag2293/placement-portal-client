@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import LoginForm from '../components/LoginForm'
 import companyContext from '../context/company/companyContext'
 
-const SERVER = 'http://localhost:5000/api'
+import { SERVER } from '../constants/constants'
 
 const CompanyLogin = () => {
     const navigate = useNavigate()

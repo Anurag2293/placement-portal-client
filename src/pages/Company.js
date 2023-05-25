@@ -5,7 +5,7 @@ import companyContext from '../context/company/companyContext'
 import ProfileBar from '../components/ProfileBar'
 import CompanyTable from '../components/CompanyTable'
 
-const SERVER = 'http://localhost:5000/api'
+import { SERVER } from '../constants/constants'
 
 const Company = () => {
     const navigate = useNavigate()
@@ -58,7 +58,7 @@ const Company = () => {
         }
 
         findAppliedStudents()
-    }, [])
+    }, [company.email, companyLogin, navigate])
 
     return (
         <>

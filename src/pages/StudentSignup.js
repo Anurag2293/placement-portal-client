@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import SignupForm from '../components/StudentSignup'
 import StudentContext from '../context/student/studentContext';
 
-const SERVER = 'http://localhost:5000/api'
+import { SERVER } from '../constants/constants'
 
 const StudentSignup = () => {
     const navigate = useNavigate()

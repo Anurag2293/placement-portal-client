@@ -39,11 +39,8 @@ const CompanyTable = ({ title, studentsApplied }) => {
                                     <td>{cgpa}</td>
                                     <td>{branch}</td>
                                     <td>{gender}</td>
-                                    <td><a href="">{resumeLink}</a></td>
+                                    <td><a href={resumeLink}>{resumeLink}</a></td>
                                     <td>{status}</td>
-                                    {/* <td>
-                                        <button className='table-apply-button' onClick={() => handleApplyClick(email)}>Apply</button>
-                                    </td> */}
                                 </tr>)
                                 )}
                             </tbody>
