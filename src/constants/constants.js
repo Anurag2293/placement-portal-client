@@ -1,1 +1,1 @@
-export const SERVER = `https://placement-portal-api.azurewebsites.net/`
+export const SERVER = `https://placement-portal-api.azurewebsites.net`
